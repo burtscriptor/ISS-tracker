@@ -44,7 +44,7 @@ function App() {
   }, [issLocation]);
 
   useEffect(()=>{
-    getHome();
+    // getHome();
     getAstronauts();
     setIsLoading(false);
   },[])
@@ -60,14 +60,14 @@ function App() {
     setInSpace(res.data)
   };
 
-  function success(position) {
-    let { coords } = position;
-    setHome({ lat: coords.latitude, lng: coords.longitude})
-  };
+  // function success(position) {
+  //   let { coords } = position;
+  //   setHome({ lat: coords.latitude, lng: coords.longitude})
+  // };
 
-  const getHome = () => {
-    navigator.geolocation.getCurrentPosition(success);
-  };
+  // const getHome = () => {
+  //   navigator.geolocation.getCurrentPosition(success);
+  // };
 
   const apiKey = GetApiKey();
 
