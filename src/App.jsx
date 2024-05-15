@@ -23,7 +23,6 @@ function App() {
   const [markerRef, marker] = useMarkerRef('one');
   const [open, setOpen] = useState(false);
   const [issLocation, setIssLocation] = useState({ lat: 0, lng: 0})
-  const [home, setHome] =useState({ lat: 0, lng: 0 })
   const [inSpace, setInSpace] =  useState(null)
   const [isLoading, setIsLoading] = useState(true)
   const [show, setShow] = useState(true)
@@ -44,7 +43,6 @@ function App() {
   }, [issLocation]);
 
   useEffect(()=>{
-    // getHome();
     getAstronauts();
     setIsLoading(false);
   },[])
@@ -60,14 +58,6 @@ function App() {
     setInSpace(res.data)
   };
 
-  // function success(position) {
-  //   let { coords } = position;
-  //   setHome({ lat: coords.latitude, lng: coords.longitude})
-  // };
-
-  // const getHome = () => {
-  //   navigator.geolocation.getCurrentPosition(success);
-  // };
 
   const apiKey = GetApiKey();
 
